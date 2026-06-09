@@ -97,7 +97,7 @@
                 <div style="font-size: 1.4rem; display: flex; gap: 20px;">
                     <a href="https://www.facebook.com/ONGCLimited/" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/ongcofficial/" target="_blank" style="color: #e1306c;"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/ONGC_" target="_blank" style="color: #000000;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://x.com/ONGC_" target="_blank" style="color: #000000;"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://in.linkedin.com/company/oilandnaturalgascorporation" target="_blank" style="color: #0077b5;"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.youtube.com/c/ONGCLtd1/" target="_blank" style="color: #ff0000;"><i class="fab fa-youtube"></i></a>
                 </div>
