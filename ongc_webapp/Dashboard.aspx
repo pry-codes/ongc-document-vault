@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="System Dashboard" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="ongc_webapp.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- Required library for Charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
@@ -74,7 +73,6 @@
                         <li><i class="fas fa-clock" style="margin-right: 8px; color: #95a5a6;"></i> Last Sync: Today, 11:40 AM</li>
                     </ul>
                 </div>
-
                 <div class="col-md-4 divider-col">
                     <div class="footer-heading">Need Help?</div>
                     <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 2.2;">
@@ -82,7 +80,6 @@
                         <li><a href="mailto:support@ongc.co.in" class="footer-link"><i class="fas fa-envelope" style="margin-right: 8px; color: #95a5a6;"></i> Contact Support</a></li>
                     </ul>
                 </div>
-
                 <div class="col-md-4">
                     <div class="footer-heading">Enterprise Info</div>
                     <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
@@ -92,7 +89,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div style="border-top: 1px solid #dee2e6; margin-top: 30px; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div style="font-size: 1.4rem; display: flex; gap: 20px;">
                     <a href="https://www.facebook.com/ONGCLimited/" target="_blank" style="color: #3b5998;"><i class="fab fa-facebook"></i></a>
@@ -108,21 +104,38 @@
 
     <script>
 /* eslint-disable */
-// @ts-ignore
-const palette = ['#7a0616', '#2d3436', '#b2bec3'];
+// @ts-nocheck
+const palette = ['#8d071a', '#bdc3c7', '#2c3e50'];
 
-// @ts-ignore
+// Line Chart
 new Chart(document.getElementById('indexingChart'), {
     type: 'line',
-    data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ data: [12, 19, 3, 5, 48, 53], borderColor: '#7a0616', fill: false, tension: 0.1 }] },
-    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Timeline (Month)', font: { weight: 'bold' } } }, y: { title: { display: true, text: 'Documents Indexed', font: { weight: 'bold' } }, beginAtZero: true } } }
+    data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ data: [12, 19, 3, 5, 48, 53], borderColor: '#8d071a', tension: 0.3, pointRadius: 5, pointHoverRadius: 8 }] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { display: false } } }
 });
 
-// @ts-ignore
+// Doughnut Chart
 new Chart(document.getElementById('fileTypePieChart'), {
     type: 'doughnut',
     data: { labels: ['PDF', 'DOCX', 'XLSX'], datasets: [{ data: [60, 25, 15], backgroundColor: palette }] },
-    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'right',
+                onClick: function (e, legendItem, legend) {
+                    const index = legendItem.index;
+                    const chart = legend.chart;
+                    if (chart.isDatasetVisible(0)) {
+                        chart.hide(index);
+                    } else {
+                        chart.show(index);
+                    }
+                }
+            }
+        }
+    }
 });
 </script>
 </asp:Content>
