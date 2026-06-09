@@ -14,8 +14,6 @@ namespace ongc_webapp
     public partial class Dashboard
     {
 
-        
-
         /// <summary>
         /// lblTotalFiles control.
         /// </summary>
