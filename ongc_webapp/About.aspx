@@ -72,14 +72,4 @@
 
         </div>
     </div>
-
-    <!-- Simplified Professional Footer -->
-    <footer style="background-color: #7a0616; color: #ffffff; padding: 25px 40px; margin-top: 50px; text-align: center;">
-        <div style="font-size: 0.9rem; margin-bottom: 8px;">
-            &copy; 2026 ONGC Ltd. | Version v1.2.0 | <span style="color: #48bb78;">● System Operational</span>
-        </div>
-        <div style="font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.5px;">
-            INTERNAL ENTERPRISE SYSTEM | AUTHORIZED PERSONNEL ONLY | AUDIT LOGS ENABLED
-        </div>
-    </footer>
 </asp:Content>
